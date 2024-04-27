@@ -1,21 +1,17 @@
-// Objeto contendo perguntas e respostas
-const responses = {
-    "Qual é o objetivo do jogo?": "O objetivo é...",
-    "Quem é o personagem principal?": "O personagem principal é...",
-    // Adicione mais perguntas e respostas conforme necessário
-};
-
-// Função para processar perguntas e fornecer respostas
-function askQuestion(question) {
-    if (responses.hasOwnProperty(question)) {
-        return responses[question];
-    } else {
-        return "Desculpe, não entendi a pergunta.";
-    }
+function askQuestion() {
+    var question = document.getElementById('questionInput').value;
+    var answer = getAnswer(question);
+    document.getElementById('answer').innerHTML = answer;
 }
 
-// Exemplo de uso
-const question = "Qual é o objetivo do jogo?";
-const answer = askQuestion(question);
-console.log("Pergunta: " + question);
-console.log("Resposta: " + answer);
+function getAnswer(question) {
+    // Lógica para retornar respostas com base na pergunta
+    switch (question.toLowerCase()) {
+        case "qual é o objetivo do jogo?":
+            return "O objetivo do jogo é...";
+        case "quem é o personagem principal?":
+            return "O personagem principal é...";
+        default:
+            return "Desculpe, não entendi a pergunta.";
+    }
+}

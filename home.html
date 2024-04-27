@@ -7,33 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>IA do Jogo</h1>
+    </header>
+
     <div class="container">
-        <h1>Bem-vindo à IA do Jogo</h1>
-        <div class="question">
-            <input type="text" id="questionInput" placeholder="Faça uma pergunta...">
-            <button onclick="askQuestion()">Perguntar</button>
-        </div>
         <div class="answer" id="answer"></div>
     </div>
 
-    <script>
-        function askQuestion() {
-            var question = document.getElementById('questionInput').value;
-            var answer = getAnswer(question);
-            document.getElementById('answer').innerHTML = answer;
-        }
-    
-        function getAnswer(question) {
-            // Lógica para retornar respostas com base na pergunta
-            switch (question.toLowerCase()) {
-                case "qual é o objetivo do jogo?":
-                    return "O objetivo do jogo é...";
-                case "quem é o personagem principal?":
-                    return "O personagem principal é...";
-                default:
-                    return "Desculpe, não entendi a pergunta.";
-            }
-        }
-    </script>
+    <footer>
+        <div class="search">
+            <input type="text" id="questionInput" placeholder="Faça uma pergunta...">
+            <button onclick="askQuestion()">Perguntar</button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
+
